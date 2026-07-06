@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "eyebrow": "A field journal by Ayaan · Hong Kong & beyond",
+    "headline": "Field notes from the trail & the sky.",
+    "accentWords": ["trail", "sky"],
+    "images": [
+      "/uploads/DJI_20260612181624_0015_D.JPG"
+    ],
+    "primaryButton": "Explore my adventures",
+    "secondaryButton": "About me"
+  },
+  "ticker": {
+    "enabled": true,
+    "speedSeconds": 60,
+    "customPlaces": []
+  },
+  "homeSections": {
+    "latestEyebrow": "Latest entry",
+    "latestTitle": "Fresh from the journal",
+    "latestSub": "The newest hikes, beaches and trips — straight from the logbook.",
+    "browseEyebrow": "Browse the journal",
+    "browseTitle": "Pick a direction"
+  },
+  "exploreTiles": [
+    { "label": "Hikes", "sub": "Ridgelines & trails" },
+    { "label": "Beaches", "sub": "Sand & swims" },
+    { "label": "Travels", "sub": "Across the map" }
+  ],
+  "cta": {
+    "eyebrow": "The map is the to-do list",
+    "titleLine1": "Spin the globe.",
+    "titleLine2": "See where I've been.",
+    "button": "Open the globe →"
+  },
+  "pageHeaders": {
+    "hikes": {
+      "eyebrow": "Field notes",
+      "title": "Hikes & Trails",
+      "subtitle": "Route notes and trip reports from the trail."
+    },
+    "beaches": {
+      "eyebrow": "Sun & sand",
+      "title": "Beaches",
+      "subtitle": "Lazy days and swims around Hong Kong and beyond."
+    },
+    "travels": {
+      "eyebrow": "The map is the to-do list",
+      "title": "Travels",
+      "subtitle": "Spin the globe and tap a dot. Pins with a write-up open the full story — the rest are places I've been but haven't written about yet."
+    },
+    "about": {
+      "eyebrow": "The person behind the journal"
+    }
+  },
+  "footer": {
+    "signoff": "See you out there."
+  }
+}

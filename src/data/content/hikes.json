@@ -1,0 +1,109 @@
+{
+  "items": [
+    {
+      "slug": "dragons-back",
+      "title": "Dragon's Back",
+      "region": "Hong Kong Island & Southern Outlying Islands",
+      "date": "Nov 2025",
+      "difficulty": 2,
+      "duration": "2h 30m",
+      "distance": 8.5,
+      "image": "https://images.unsplash.com/photo-1540202404-a2f29016b523?w=900&q=80&auto=format&fit=crop",
+      "excerpt": "Hong Kong's most famous ridge walk with sweeping sea views.",
+      "content": "An easy-going ridgeline above Shek O with the South China Sea on both sides. Start from To Tei Wan, follow the spine of the \"dragon\", and finish at Big Wave Bay for a swim. Best in the cool, clear months from November to February.",
+      "gallery": [
+        {
+          "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1454942901704-3c44c11b2ad1?w=600&q=80&auto=format&fit=crop"
+        }
+      ],
+      "videos": []
+    },
+    {
+      "slug": "lion-rock",
+      "title": "Lion Rock",
+      "region": "Central New Territories & Kowloon Ridges",
+      "date": "Dec 2025",
+      "difficulty": 3,
+      "duration": "3h 15m",
+      "distance": 6.9,
+      "image": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=900&q=80&auto=format&fit=crop",
+      "excerpt": "A steep climb to the iconic peak overlooking Kowloon.",
+      "content": "A sharp ascent rewards you with one of the best panoramas of the Kowloon peninsula and Victoria Harbour. The final scramble to the \"lion's head\" is exposed but short. Go at sunrise to beat the heat and the crowds.",
+      "gallery": [
+        {
+          "src": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80&auto=format&fit=crop"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop"
+        }
+      ],
+      "videos": []
+    },
+    {
+      "slug": "sunset-peak",
+      "title": "Sunset Peak (Tai Tung Shan)",
+      "region": "Lantau Island",
+      "date": "Jan 2026",
+      "difficulty": 4,
+      "duration": "5h 00m",
+      "distance": 12.0,
+      "image": "https://images.unsplash.com/photo-1551632811-561732d1e306?w=900&q=80&auto=format&fit=crop",
+      "excerpt": "The third-highest peak in Hong Kong, famed for silvergrass.",
+      "content": "A long, rewarding climb on Lantau Island through rolling hills of silvergrass that glow gold at sunset. The old stone bothies near the top make a great rest stop. Bring layers — it gets windy and cold up high in winter.",
+      "gallery": [
+        {
+          "src": "https://images.unsplash.com/photo-1454942901704-3c44c11b2ad1?w=600&q=80&auto=format&fit=crop"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop"
+        }
+      ],
+      "videos": []
+    },
+    {
+      "slug": "maclehose-stage-2",
+      "title": "MacLehose Stage 2 — Long Ke to Sai Wan",
+      "region": "Sai Kung & Eastern New Territories",
+      "date": "Feb 2026",
+      "difficulty": 3,
+      "duration": "4h 30m",
+      "distance": 13.5,
+      "image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=900&q=80&auto=format&fit=crop",
+      "excerpt": "Turquoise bays and the best beaches in Hong Kong.",
+      "content": "Arguably the most beautiful stretch of the MacLehose Trail, hugging the Sai Kung coastline past Long Ke and the Tai Long Wan beaches. White sand, clear water, and barely a building in sight.",
+      "gallery": [
+        {
+          "src": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format&fit=crop"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80&auto=format&fit=crop"
+        }
+      ],
+      "videos": []
+    },
+    {
+      "slug": "pat-sin-leng",
+      "title": "Pat Sin Leng Ridge",
+      "region": "Northern & Northwestern New Territories",
+      "date": "Mar 2026",
+      "difficulty": 4,
+      "duration": "5h 30m",
+      "distance": 14.0,
+      "image": "https://images.unsplash.com/photo-1469521669194-babb45599def?w=900&q=80&auto=format&fit=crop",
+      "excerpt": "The \"Ridge of Eight Immortals\" above Plover Cove.",
+      "content": "A challenging switchback ridge in the far north, with eight named summits and big views over Plover Cove Reservoir and across to Shenzhen. Exposed and undulating — carry plenty of water.",
+      "gallery": [
+        {
+          "src": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80&auto=format&fit=crop"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop"
+        }
+      ],
+      "videos": []
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Ayaan",
+  "homeIntro": "Hey guys, I'm Ayaan — welcome to my little corner of the internet where I log the trails I hike and the places I travel. Pull up a chair and explore.",
+  "status": "Out chasing trails & boarding passes",
+  "bio": "I'm Ayaan, currently studying Mechanical Engineering at the University of Hong Kong. My biggest dream is to become a pilot — and the absolute goal is to do both: work as an aerospace engineer while flying as a pilot. Outside of that, I want to travel to every corner of the world, stay as fit as I possibly can, and keep playing the sport I love. This site is where I keep track of the hikes and trips along the way.",
+  "email": "ayaanoutdoors@gmail.com",
+  "instagram": "https://www.instagram.com/ayaanoutdoors/",
+  "linkedin": "https://www.linkedin.com/in/shaikayaanahmed",
+  "footerBio": "A hobby blog for my hikes and travels. Aspiring pilot and aerospace engineer, forever planning the next trip.",
+  "passions": [
+    {
+      "icon": "✈️",
+      "title": "Aviation",
+      "text": "Chasing a pilot's licence and a future in the cockpit."
+    },
+    {
+      "icon": "🛩️",
+      "title": "Aerospace",
+      "text": "The dream career: aerospace engineer and pilot, both."
+    },
+    {
+      "icon": "🌍",
+      "title": "Travel",
+      "text": "A standing goal to reach every corner of the world."
+    },
+    {
+      "icon": "🏏",
+      "title": "Cricket",
+      "text": "Fast bowler — the sport that keeps me competitive."
+    },
+    {
+      "icon": "💪",
+      "title": "Fitness",
+      "text": "Always training to be the fittest version of myself."
+    },
+    {
+      "icon": "🥾",
+      "title": "Hiking",
+      "text": "Weekends on the trail, logged right here."
+    }
+  ]
+}

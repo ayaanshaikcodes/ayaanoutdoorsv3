@@ -1,0 +1,520 @@
+# ============================================================
+#  ayaanoutdoors — Sveltia CMS configuration
+#  Everything on the site is editable from this admin panel:
+#    Site settings  -> hero, ticker, headings, tiles, CTA, footer
+#    Profile        -> your name, bio, socials, passions
+#    Hikes / Beaches / Travels -> the posts themselves
+#    Map markers    -> dots-only places on the globe
+# ============================================================
+
+backend:
+  name: github
+  repo: ayaanshaikcodes/ayaanoutdoors
+  branch: main
+  base_url: https://ayaanoutdoors.vercel.app
+  auth_endpoint: api/auth
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+site_url: https://ayaanoutdoors.vercel.app
+
+collections:
+  # ================= SITE SETTINGS =================
+  - name: site
+    label: "Site settings"
+    description: "Every fixed piece of the site — hero, ticker, section headings, explore tiles, the globe banner and the footer."
+    files:
+      - name: site_data
+        label: "Site settings"
+        file: "src/data/content/site.json"
+        fields:
+          - name: hero
+            label: "Home hero (top of the home page)"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small line above the headline", widget: string }
+              - { name: headline, label: "Big headline", widget: string }
+              - name: accentWords
+                label: "Accent words (words in the headline to colour — 1st terra, 2nd green)"
+                widget: list
+                required: false
+                field: { name: word, label: "Word", widget: string }
+              - name: images
+                label: "Hero photos — one is picked AT RANDOM on every visit. Add as many as you like."
+                widget: list
+                field: { name: image, label: "Photo", widget: image }
+              - { name: primaryButton, label: "Main button text", widget: string }
+              - { name: secondaryButton, label: "Second button text", widget: string }
+          - name: ticker
+            label: "Scrolling places ticker (under the hero)"
+            widget: object
+            fields:
+              - { name: enabled, label: "Show the ticker", widget: boolean, default: true }
+              - name: speedSeconds
+                label: "Speed — seconds for one full loop (bigger = slower)"
+                widget: number
+                value_type: int
+                default: 60
+              - name: customPlaces
+                label: "Custom place names (leave EMPTY to auto-fill from your map pins)"
+                widget: list
+                required: false
+                field: { name: name, label: "Place", widget: string }
+          - name: homeSections
+            label: "Home page section headings"
+            widget: object
+            fields:
+              - { name: latestEyebrow, label: "'Latest' small label", widget: string }
+              - { name: latestTitle, label: "'Latest' heading", widget: string }
+              - { name: latestSub, label: "'Latest' sub-line", widget: string }
+              - { name: browseEyebrow, label: "'Browse' small label", widget: string }
+              - { name: browseTitle, label: "'Browse' heading", widget: string }
+          - name: exploreTiles
+            label: "Explore tiles (the 3 big image tiles). Order = Hikes, Beaches, Travels."
+            widget: list
+            allow_add: false
+            fields:
+              - { name: label, label: "Tile title", widget: string }
+              - { name: sub, label: "Tile small label", widget: string }
+              - name: image
+                label: "Tile photo (optional — leave empty to auto-use the newest post's cover)"
+                widget: image
+                required: false
+          - name: cta
+            label: "Globe banner (dark band near the bottom of the home page)"
+            widget: object
+            fields:
+              - { name: eyebrow, label: "Small label", widget: string }
+              - { name: titleLine1, label: "Heading line 1", widget: string }
+              - { name: titleLine2, label: "Heading line 2 (green italic)", widget: string }
+              - { name: button, label: "Button text", widget: string }
+          - name: pageHeaders
+            label: "Page headers (titles at the top of each section page)"
+            widget: object
+            fields:
+              - name: hikes
+                label: "Hikes page"
+                widget: object
+                fields:
+                  - { name: eyebrow, label: "Small label", widget: string }
+                  - { name: title, label: "Title", widget: string }
+                  - { name: subtitle, label: "Subtitle", widget: string }
+              - name: beaches
+                label: "Beaches page"
+                widget: object
+                fields:
+                  - { name: eyebrow, label: "Small label", widget: string }
+                  - { name: title, label: "Title", widget: string }
+                  - { name: subtitle, label: "Subtitle", widget: string }
+              - name: travels
+                label: "Travels page"
+                widget: object
+                fields:
+                  - { name: eyebrow, label: "Small label", widget: string }
+                  - { name: title, label: "Title", widget: string }
+                  - { name: subtitle, label: "Subtitle", widget: string }
+              - name: about
+                label: "About page"
+                widget: object
+                fields:
+                  - { name: eyebrow, label: "Small label", widget: string }
+          - name: footer
+            label: "Footer"
+            widget: object
+            fields:
+              - { name: signoff, label: "Big sign-off line", widget: string }
+
+  # ================= PROFILE & ABOUT =================
+  - name: profile
+    label: "Profile & About"
+    description: "Your name, intros, bio, social links and the 'What I'm about' cards."
+    files:
+      - name: profile_data
+        label: "Profile"
+        file: "src/data/content/profile.json"
+        fields:
+          - { name: name, label: "Display name", widget: string }
+          - { name: homeIntro, label: "Home-page intro paragraph", widget: text }
+          - { name: status, label: "Status line (not currently shown, kept for reuse)", widget: string }
+          - { name: bio, label: "About-page bio", widget: text }
+          - { name: email, label: "Email", widget: string }
+          - { name: instagram, label: "Instagram URL", widget: string }
+          - { name: linkedin, label: "LinkedIn URL", widget: string }
+          - { name: footerBio, label: "Footer blurb", widget: text }
+          - name: passions
+            label: "'What I'm about' cards"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: icon, label: "Emoji", widget: string }
+              - { name: title, label: "Title", widget: string }
+              - { name: text, label: "Description", widget: string }
+
+  # ================= HIKES =================
+  - name: hikes
+    label: "Hikes"
+    label_singular: "Hike"
+    description: "Each entry is a card on the Hikes page and its own article. New entries appear first on the home page."
+    files:
+      - name: hikes_data
+        label: "All hikes"
+        file: "src/data/content/hikes.json"
+        fields:
+          - name: items
+            label: "Hikes"
+            label_singular: "Hike"
+            widget: list
+            summary: "{{fields.title}} — {{fields.region}}"
+            fields:
+              - { name: title, label: "Title", widget: string }
+              - name: slug
+                label: "Slug (web address, lowercase-with-dashes, must be unique)"
+                widget: string
+                pattern: ['^[a-z0-9-]+$', "Use only lowercase letters, numbers and dashes"]
+              - name: region
+                label: "Region"
+                widget: select
+                options:
+                  - "Sai Kung & Eastern New Territories"
+                  - "Central New Territories & Kowloon Ridges"
+                  - "Northern & Northwestern New Territories"
+                  - "Lantau Island"
+                  - "Hong Kong Island & Southern Outlying Islands"
+              - { name: date, label: "Date (e.g. Nov 2025)", widget: string }
+              - name: difficulty
+                label: "Difficulty (1 = easy, 5 = hard)"
+                widget: number
+                value_type: int
+                min: 1
+                max: 5
+              - { name: duration, label: "Duration (e.g. 3h 15m)", widget: string }
+              - name: distance
+                label: "Distance (km)"
+                widget: number
+                value_type: float
+              - { name: excerpt, label: "Short summary (one line)", widget: text }
+              - { name: content, label: "Full write-up", widget: text }
+              - name: blocks
+                label: "Content blocks (optional) — mix paragraphs, photos & videos in order"
+                widget: list
+                required: false
+                label_singular: "Block"
+                types:
+                  - name: paragraph
+                    label: "Paragraph"
+                    summary: "{{fields.text}}"
+                    fields:
+                      - { name: text, label: "Text", widget: text }
+                  - name: image
+                    label: "Image"
+                    summary: "{{fields.caption}}"
+                    fields:
+                      - { name: image, label: "Photo", widget: image }
+                      - { name: caption, label: "Caption (optional)", widget: string, required: false }
+                      - name: size
+                        label: "Size"
+                        widget: select
+                        default: "large"
+                        options:
+                          - { label: "Small", value: "small" }
+                          - { label: "Medium", value: "medium" }
+                          - { label: "Large (full width)", value: "large" }
+                  - name: video
+                    label: "Video"
+                    summary: "{{fields.url}}"
+                    fields:
+                      - name: url
+                        label: "Video link (YouTube, YouTube Short, or Instagram Reel)"
+                        widget: string
+                        hint: "Paste a YouTube link, a YouTube Short, or a clean Instagram reel link like https://www.instagram.com/reel/CODE/"
+                      - name: orientation
+                        label: "Shape"
+                        widget: select
+                        default: "auto"
+                        options:
+                          - { label: "Auto (Shorts & reels = tall, normal YouTube = wide)", value: "auto" }
+                          - { label: "Tall / portrait", value: "portrait" }
+                          - { label: "Wide / landscape", value: "landscape" }
+                      - { name: caption, label: "Caption (optional)", widget: string, required: false }
+              - name: videos
+                label: "Videos section (optional) — shown after the write-up"
+                widget: list
+                required: false
+                label_singular: "Video"
+                summary: "{{fields.url}}"
+                fields:
+                  - name: url
+                    label: "Video link (YouTube, YouTube Short, or Instagram Reel)"
+                    widget: string
+                    hint: "Paste a YouTube link, a YouTube Short, OR a clean Instagram reel link like https://www.instagram.com/reel/CODE/"
+                  - name: orientation
+                    label: "Shape"
+                    widget: select
+                    default: "auto"
+                    options:
+                      - { label: "Auto (Shorts & reels = tall, normal YouTube = wide)", value: "auto" }
+                      - { label: "Tall / portrait", value: "portrait" }
+                      - { label: "Wide / landscape", value: "landscape" }
+              - name: image
+                label: "Cover image"
+                widget: image
+                required: false
+              - name: gallery
+                label: "Photo gallery (optional, end of the article)"
+                widget: list
+                required: false
+                fields:
+                  - { name: src, label: "Photo", widget: image }
+
+  # ================= BEACHES =================
+  - name: beaches
+    label: "Beaches"
+    label_singular: "Beach"
+    description: "Each entry is a card on the Beaches page and its own article. Beaches show a star RATING and a visit length (no distance)."
+    files:
+      - name: beaches_data
+        label: "All beaches"
+        file: "src/data/content/beaches.json"
+        fields:
+          - name: items
+            label: "Beaches"
+            label_singular: "Beach"
+            widget: list
+            summary: "{{fields.title}} — {{fields.region}}"
+            fields:
+              - { name: title, label: "Title", widget: string }
+              - name: slug
+                label: "Slug (web address, lowercase-with-dashes, must be unique)"
+                widget: string
+                pattern: ['^[a-z0-9-]+$', "Use only lowercase letters, numbers and dashes"]
+              - name: region
+                label: "Region"
+                widget: select
+                options:
+                  - "Sai Kung & Eastern New Territories"
+                  - "Central New Territories & Kowloon Ridges"
+                  - "Northern & Northwestern New Territories"
+                  - "Lantau Island"
+                  - "Hong Kong Island & Southern Outlying Islands"
+              - { name: date, label: "Date (e.g. Jun 2026)", widget: string }
+              - name: difficulty
+                label: "Rating (1 = okay, 5 = unmissable) — shown as stars"
+                widget: number
+                value_type: int
+                min: 1
+                max: 5
+              - { name: duration, label: "Visit length (e.g. Half day, Full day, Sunset only)", widget: string }
+              - { name: excerpt, label: "Short summary (one line)", widget: text }
+              - { name: content, label: "Full write-up", widget: text }
+              - name: blocks
+                label: "Content blocks (optional) — mix paragraphs, photos & videos in order"
+                widget: list
+                required: false
+                label_singular: "Block"
+                types:
+                  - name: paragraph
+                    label: "Paragraph"
+                    summary: "{{fields.text}}"
+                    fields:
+                      - { name: text, label: "Text", widget: text }
+                  - name: image
+                    label: "Image"
+                    summary: "{{fields.caption}}"
+                    fields:
+                      - { name: image, label: "Photo", widget: image }
+                      - { name: caption, label: "Caption (optional)", widget: string, required: false }
+                      - name: size
+                        label: "Size"
+                        widget: select
+                        default: "large"
+                        options:
+                          - { label: "Small", value: "small" }
+                          - { label: "Medium", value: "medium" }
+                          - { label: "Large (full width)", value: "large" }
+                  - name: video
+                    label: "Video"
+                    summary: "{{fields.url}}"
+                    fields:
+                      - name: url
+                        label: "Video link (YouTube, YouTube Short, or Instagram Reel)"
+                        widget: string
+                        hint: "Paste a YouTube link, a YouTube Short, or a clean Instagram reel link like https://www.instagram.com/reel/CODE/"
+                      - name: orientation
+                        label: "Shape"
+                        widget: select
+                        default: "auto"
+                        options:
+                          - { label: "Auto (Shorts & reels = tall, normal YouTube = wide)", value: "auto" }
+                          - { label: "Tall / portrait", value: "portrait" }
+                          - { label: "Wide / landscape", value: "landscape" }
+                      - { name: caption, label: "Caption (optional)", widget: string, required: false }
+              - name: videos
+                label: "Videos section (optional) — shown after the write-up"
+                widget: list
+                required: false
+                label_singular: "Video"
+                summary: "{{fields.url}}"
+                fields:
+                  - name: url
+                    label: "Video link (YouTube, YouTube Short, or Instagram Reel)"
+                    widget: string
+                    hint: "Paste a YouTube link, a YouTube Short, OR a clean Instagram reel link like https://www.instagram.com/reel/CODE/"
+                  - name: orientation
+                    label: "Shape"
+                    widget: select
+                    default: "auto"
+                    options:
+                      - { label: "Auto (Shorts & reels = tall, normal YouTube = wide)", value: "auto" }
+                      - { label: "Tall / portrait", value: "portrait" }
+                      - { label: "Wide / landscape", value: "landscape" }
+              - name: image
+                label: "Cover image"
+                widget: image
+                required: false
+              - name: gallery
+                label: "Photo gallery (optional, end of the article)"
+                widget: list
+                required: false
+                fields:
+                  - { name: src, label: "Photo", widget: image }
+
+  # ================= TRAVELS =================
+  - name: travels
+    label: "Travels"
+    label_singular: "Travel post"
+    description: "Destinations with a full write-up. Each shows as a card AND a clickable dot on the globe."
+    files:
+      - name: travels_data
+        label: "All travel posts"
+        file: "src/data/content/travels.json"
+        fields:
+          - name: items
+            label: "Travel posts"
+            label_singular: "Travel post"
+            widget: list
+            summary: "{{fields.city}}, {{fields.country}}"
+            fields:
+              - { name: city, label: "City", widget: string }
+              - { name: country, label: "Country / region", widget: string }
+              - name: slug
+                label: "Slug (web address, lowercase-with-dashes, unique)"
+                widget: string
+                pattern: ['^[a-z0-9-]+$', "Use only lowercase letters, numbers and dashes"]
+              - { name: date, label: "Date", widget: string }
+              - name: lng
+                label: "Longitude (East-West). Google '<city> coordinates' — longitude is the FIRST number, can be negative"
+                widget: number
+                value_type: float
+              - name: lat
+                label: "Latitude (North-South)"
+                widget: number
+                value_type: float
+              - { name: excerpt, label: "Short summary (one line)", widget: text }
+              - { name: content, label: "Full write-up", widget: text }
+              - name: blocks
+                label: "Content blocks (optional) — mix paragraphs, photos & videos in order"
+                widget: list
+                required: false
+                label_singular: "Block"
+                types:
+                  - name: paragraph
+                    label: "Paragraph"
+                    summary: "{{fields.text}}"
+                    fields:
+                      - { name: text, label: "Text", widget: text }
+                  - name: image
+                    label: "Image"
+                    summary: "{{fields.caption}}"
+                    fields:
+                      - { name: image, label: "Photo", widget: image }
+                      - { name: caption, label: "Caption (optional)", widget: string, required: false }
+                      - name: size
+                        label: "Size"
+                        widget: select
+                        default: "large"
+                        options:
+                          - { label: "Small", value: "small" }
+                          - { label: "Medium", value: "medium" }
+                          - { label: "Large (full width)", value: "large" }
+                  - name: video
+                    label: "Video"
+                    summary: "{{fields.url}}"
+                    fields:
+                      - name: url
+                        label: "Video link (YouTube, YouTube Short, or Instagram Reel)"
+                        widget: string
+                        hint: "Paste a YouTube link, a YouTube Short, or a clean Instagram reel link like https://www.instagram.com/reel/CODE/"
+                      - name: orientation
+                        label: "Shape"
+                        widget: select
+                        default: "auto"
+                        options:
+                          - { label: "Auto (Shorts & reels = tall, normal YouTube = wide)", value: "auto" }
+                          - { label: "Tall / portrait", value: "portrait" }
+                          - { label: "Wide / landscape", value: "landscape" }
+                      - { name: caption, label: "Caption (optional)", widget: string, required: false }
+              - name: videos
+                label: "Videos section (optional) — shown after the write-up"
+                widget: list
+                required: false
+                label_singular: "Video"
+                summary: "{{fields.url}}"
+                fields:
+                  - name: url
+                    label: "Video link (YouTube, YouTube Short, or Instagram Reel)"
+                    widget: string
+                    hint: "Paste a YouTube link, a YouTube Short, OR a clean Instagram reel link like https://www.instagram.com/reel/CODE/"
+                  - name: orientation
+                    label: "Shape"
+                    widget: select
+                    default: "auto"
+                    options:
+                      - { label: "Auto (Shorts & reels = tall, normal YouTube = wide)", value: "auto" }
+                      - { label: "Tall / portrait", value: "portrait" }
+                      - { label: "Wide / landscape", value: "landscape" }
+              - name: image
+                label: "Cover image"
+                widget: image
+                required: false
+              - name: markerImage
+                label: "Small photo shown when tapping the globe dot (optional)"
+                widget: image
+                required: false
+              - name: gallery
+                label: "Photo gallery (optional, end of the article)"
+                widget: list
+                required: false
+                fields:
+                  - { name: src, label: "Photo", widget: image }
+
+  # ================= MAP MARKERS =================
+  - name: markers
+    label: "Map markers"
+    label_singular: "Marker"
+    description: "Places you've been but haven't written about yet — dots on the globe only. These also feed the home-page ticker."
+    files:
+      - name: markers_data
+        label: "All markers"
+        file: "src/data/content/markers.json"
+        fields:
+          - name: items
+            label: "Markers"
+            label_singular: "Marker"
+            widget: list
+            summary: "{{fields.city}}, {{fields.country}}"
+            fields:
+              - { name: city, label: "City", widget: string }
+              - { name: country, label: "Country / region", widget: string }
+              - name: lng
+                label: "Longitude (first number, can be negative)"
+                widget: number
+                value_type: float
+              - name: lat
+                label: "Latitude"
+                widget: number
+                value_type: float
+              - name: markerImage
+                label: "Photo shown when tapping the dot (optional)"
+                widget: image
+                required: false

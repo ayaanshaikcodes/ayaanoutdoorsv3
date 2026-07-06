@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "title": "Shek O Beach",
+      "slug": "shek-o-beach",
+      "region": "Hong Kong Island & Southern Outlying Islands",
+      "date": "Jun 2026",
+      "excerpt": "A laid-back village beach on the southeastern tip of the island.",
+      "content": "Write about Shek O here — the relaxed village vibe, the golden sand, and the nearby Dragon's Back trailhead. Replace this text with your own story.",
+      "videos": [],
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80&auto=format&fit=crop",
+      "gallery": [
+        {
+          "src": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=600&q=80&auto=format&fit=crop"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=600&q=80&auto=format&fit=crop"
+        }
+      ],
+      "rating": 4,
+      "water": "Clear & calm",
+      "access": "Bus 9 from Shau Kei Wan"
+    },
+    {
+      "title": "Repulse Bay",
+      "slug": "repulse-bay",
+      "region": "Hong Kong Island & Southern Outlying Islands",
+      "date": "Jun 2026",
+      "excerpt": "The wide, calm bay backed by the city's southern hills.",
+      "content": "Write about Repulse Bay here — the wide arc of sand, the calm water, and the promenade. Replace this text with your own story.",
+      "videos": [],
+      "image": "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=900&q=80&auto=format&fit=crop",
+      "gallery": [
+        {
+          "src": "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=600&q=80&auto=format&fit=crop"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=600&q=80&auto=format&fit=crop"
+        }
+      ],
+      "rating": 4,
+      "water": "Calm, family-friendly",
+      "access": "Bus from Central · 25 min"
+    },
+    {
+      "title": "Tong Fuk Beach",
+      "slug": "tong-fuk",
+      "region": "Lantau Island",
+      "date": "Jun 2026",
+      "excerpt": "A peaceful, easy-to-reach beach on Lantau Island with soft sand and laid-back village vibes.",
+      "content": "In progress...",
+      "videos": [
+        {
+          "url": "https://instagram.com/reel/DZiANR7PyJn/"
+        }
+      ],
+      "image": "/uploads/DJI_20260612181624_0015_D.JPG",
+      "gallery": [],
+      "rating": 4,
+      "water": "Soft sand, quiet",
+      "access": "Bus 11 on Lantau"
+    }
+  ]
+}

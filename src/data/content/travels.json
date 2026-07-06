@@ -1,0 +1,67 @@
+{
+  "items": [
+    {
+      "city": "Chengdu",
+      "country": "Sichuan, China",
+      "slug": "chengdu-china",
+      "date": "Add date",
+      "lng": 104.0668,
+      "lat": 30.5728,
+      "excerpt": "Pandas, fiery hotpot, and laid-back teahouse afternoons.",
+      "content": "Write about your trip to Chengdu here — the giant pandas, the numbing Sichuan hotpot, the teahouses of People's Park. Replace this text with your own story.",
+      "videos": [],
+      "image": "/uploads/Screenshot 2026-06-15 at 10.31.02 PM.png",
+      "markerImage": "/uploads/Screenshot 2026-06-15 at 10.32.48 PM.png",
+      "gallery": [
+        {
+          "src": "https://images.unsplash.com/photo-1551845041-63e8e76836ea?w=600&q=80&auto=format&fit=crop"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=600&q=80&auto=format&fit=crop"
+        }
+      ]
+    },
+    {
+      "city": "Ürümqi",
+      "country": "Xinjiang, China",
+      "slug": "urumqi-china",
+      "date": "Add date",
+      "lng": 87.6168,
+      "lat": 43.8256,
+      "excerpt": "Where the deserts, mountains and Silk Road cultures meet.",
+      "content": "Write about Ürümqi and Xinjiang here — the bazaars, the food, the dramatic landscapes of the far northwest. Replace this text with your own story.",
+      "videos": [],
+      "image": "https://images.unsplash.com/photo-1605648916361-9bc12ad6a569?w=900&q=80&auto=format&fit=crop",
+      "markerImage": "",
+      "gallery": [
+        {
+          "src": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80&auto=format&fit=crop"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80&auto=format&fit=crop"
+        }
+      ]
+    },
+    {
+      "city": "New York",
+      "country": "USA",
+      "slug": "new-york-usa",
+      "date": "Add date",
+      "lng": -74.006,
+      "lat": 40.7128,
+      "excerpt": "The city that genuinely never slows down.",
+      "content": "Write about New York here — the skyline, the walks, the food, the energy. Replace this text with your own story.",
+      "videos": [],
+      "image": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=900&q=80&auto=format&fit=crop",
+      "markerImage": "",
+      "gallery": [
+        {
+          "src": "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=600&q=80&auto=format&fit=crop"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=600&q=80&auto=format&fit=crop"
+        }
+      ]
+    }
+  ]
+}
