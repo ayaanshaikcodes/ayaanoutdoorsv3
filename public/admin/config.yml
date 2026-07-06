@@ -39,11 +39,13 @@ collections:
                 label: "Accent words (words in the headline to colour — 1st terra, 2nd green)"
                 widget: list
                 required: false
-                field: { name: word, label: "Word", widget: string }
+                fields:
+                  - { name: word, label: "Word", widget: string }
               - name: images
                 label: "Hero photos — one is picked AT RANDOM on every visit. Add as many as you like."
                 widget: list
-                field: { name: image, label: "Photo", widget: image }
+                fields:
+                  - { name: image, label: "Photo", widget: image }
               - { name: primaryButton, label: "Main button text", widget: string }
               - { name: secondaryButton, label: "Second button text", widget: string }
           - name: ticker
@@ -60,7 +62,8 @@ collections:
                 label: "Custom place names (leave EMPTY to auto-fill from your map pins)"
                 widget: list
                 required: false
-                field: { name: name, label: "Place", widget: string }
+                fields:
+                  - { name: name, label: "Place", widget: string }
           - name: homeSections
             label: "Home page section headings"
             widget: object

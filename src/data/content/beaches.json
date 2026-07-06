@@ -17,9 +17,9 @@
           "src": "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=600&q=80&auto=format&fit=crop"
         }
       ],
-      "rating": 4,
-      "water": "Clear & calm",
-      "access": "Bus 9 from Shau Kei Wan"
+      "access": "Bus 9 from Shau Kei Wan",
+      "difficulty": 4,
+      "duration": "Clear & calm"
     },
     {
       "title": "Repulse Bay",
@@ -38,9 +38,9 @@
           "src": "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=600&q=80&auto=format&fit=crop"
         }
       ],
-      "rating": 4,
-      "water": "Calm, family-friendly",
-      "access": "Bus from Central · 25 min"
+      "access": "Bus from Central · 25 min",
+      "difficulty": 4,
+      "duration": "Calm, family-friendly"
     },
     {
       "title": "Tong Fuk Beach",
@@ -56,9 +56,9 @@
       ],
       "image": "/uploads/DJI_20260612181624_0015_D.JPG",
       "gallery": [],
-      "rating": 4,
-      "water": "Soft sand, quiet",
-      "access": "Bus 11 on Lantau"
+      "access": "Bus 11 on Lantau",
+      "difficulty": 4,
+      "duration": "Soft sand, quiet"
     }
   ]
 }
