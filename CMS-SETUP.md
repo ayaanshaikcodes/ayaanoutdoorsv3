@@ -22,12 +22,12 @@ Open the file **`public/admin/config.yml`** and change the three marked lines ne
 ```yaml
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME   # e.g. ayaan/ayaanoutdoors
+  repo: ayaanshaikcodes/ayaanoutdoorsv3 # e.g. ayaan/ayaanoutdoors
   branch: main
-  base_url: https://YOUR_SITE_DOMAIN          # e.g. https://ayaanoutdoors.vercel.app
+  base_url: https://ayaanoutdoors.vercel.app         # e.g. https://ayaanoutdoors.vercel.app
   auth_endpoint: api/auth
 ...
-site_url: https://YOUR_SITE_DOMAIN            # same URL again
+site_url: https://ayaanoutdoors.vercel.app           # same URL again
 ```
 
 - `repo` is your `username/repository` exactly as it appears in the GitHub URL.
