@@ -2,9 +2,18 @@
   "hero": {
     "eyebrow": "A field journal by Ayaan · Hong Kong & beyond",
     "headline": "Field notes from the trail & the sky.",
-    "accentWords": ["trail", "sky"],
+    "accentWords": [
+      {
+        "word": "trail"
+      },
+      {
+        "word": "sky"
+      }
+    ],
     "images": [
-      "/uploads/DJI_20260612181624_0015_D.JPG"
+      {
+        "image": "/uploads/DJI_20260612181624_0015_D.JPG"
+      }
     ],
     "primaryButton": "Explore my adventures",
     "secondaryButton": "About me"
@@ -22,9 +31,18 @@
     "browseTitle": "Pick a direction"
   },
   "exploreTiles": [
-    { "label": "Hikes", "sub": "Ridgelines & trails" },
-    { "label": "Beaches", "sub": "Sand & swims" },
-    { "label": "Travels", "sub": "Across the map" }
+    {
+      "label": "Hikes",
+      "sub": "Ridgelines & trails"
+    },
+    {
+      "label": "Beaches",
+      "sub": "Sand & swims"
+    },
+    {
+      "label": "Travels",
+      "sub": "Across the map"
+    }
   ],
   "cta": {
     "eyebrow": "The map is the to-do list",

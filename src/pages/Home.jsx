@@ -63,7 +63,7 @@ export default function Home() {
   // ---- hero photo: shuffled on every visit --------------------------------
   // Picks a random image from the CMS "hero images" list each page load.
   const heroImages = site.hero.images?.length
-    ? site.hero.images
+    ? site.hero.images.map((v) => (typeof v === 'string' ? v : v.image)).filter(Boolean)
     : ['/uploads/DJI_20260612181624_0015_D.JPG']
   const [heroImage] = useState(
     () => heroImages[Math.floor(Math.random() * heroImages.length)]
@@ -119,7 +119,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="mt-4 font-serif text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.04] max-w-3xl"
             >
-              <AccentHeadline text={site.hero.headline} accents={site.hero.accentWords} />
+              <AccentHeadline text={site.hero.headline} accents={(site.hero.accentWords || []).map((v) => (typeof v === 'string' ? v : v.word)).filter(Boolean)} />
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
