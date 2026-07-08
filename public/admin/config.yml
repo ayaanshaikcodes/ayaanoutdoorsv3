@@ -9,7 +9,7 @@
 
 backend:
   name: github
-  repo: ayaanshaikcodes/ayaanoutdoors
+  repo: ayaanshaikcodes/ayaanoutdoorsv3
   branch: main
   base_url: https://ayaanoutdoors.vercel.app
   auth_endpoint: api/auth
